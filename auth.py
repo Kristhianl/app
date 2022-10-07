@@ -134,7 +134,7 @@ def confirm():
                 flash('Invalid')
                 return render_template('auth/forgot.html')
 
-            if ?:
+            if not password:
                 flash('Password required')
                 return render_template('auth/change.html', number=authid)
 
