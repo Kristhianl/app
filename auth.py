@@ -205,9 +205,9 @@ def forgot():
             return redirect(url_for('inbox.show'))
         
         if request.method == 'POST':
-            email = ?
+            email = request.form['email']
             
-            if (? or (not utils.isEmailValid(email))):
+            if (not email or (not utils.isEmailValid(email))):
                 error = 'Email Address Invalid'
                 flash(error)
                 return render_template('auth/forgot.html')
@@ -281,7 +281,7 @@ def login():
 
             if error is None:
                 session.clear()
-                session['user_id'] = user[?]
+                session['user_id'] = user['id']
                 return redirect(url_for('inbox.show'))
 
             flash(error)
