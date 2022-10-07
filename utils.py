@@ -1,4 +1,4 @@
-import re 
+import re
 from validate_email import validate_email
 
 pass_reguex="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^\W_]{8,}$"
